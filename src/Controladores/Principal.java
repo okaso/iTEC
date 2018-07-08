@@ -79,14 +79,17 @@ public class Principal implements ActionListener, KeyListener {
         if (e.getSource() == IP.getItemAsignaturas()) {
             new Asignaturas(IP, this.Conexion);
         }
+         if (e.getSource() == IP.getItemUsuarios()) {
+            new Usuarios(IP, this.Conexion);
+        }
         if (e.getSource() == IP.getItemEstudiantes()) {
-            //new ControladorUsuarios(IP, this.Conexion);
+            new Estudiantes(IP, this.Conexion);
         }
         if (e.getSource() == IP.getItemSalir()) {
             System.exit(0);
         }
         if (e.getSource() == IP.getjMenuItem5()) {
-            JOptionPane.showMessageDialog(IP, "Desarrollado por Juan Pablo Segovia Vargas y\n Jaime Tadio Flores", "Acerca de...", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(IP, "Desarrollado por:\nJuan Pablo Segovia Vargas \n\ty\nJaime Tadio Flores\nPresentacion Examen Final", "Acerca de...", JOptionPane.INFORMATION_MESSAGE);
         }
 
         if (e.getSource() == PL.getBtnIngresar()) {

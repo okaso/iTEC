@@ -113,7 +113,7 @@ public class ModeloAsignaturas {
                     + "P.horasmes, P.trimestre, P.docente, P.carrera  FROM asignaturas P "
                     + "INNER JOIN carreras C ON C.id = P.id_fk";
             if (!textoBusqueda.isEmpty()) {
-                consulta += " WHERE P.nombre LIKE '%" + textoBusqueda + "%' OR P.titulo LIKE '%" + textoBusqueda + "%' OR P.descripcion LIKE '%" + textoBusqueda + "%' OR C.nombre LIKE '%" + textoBusqueda + "%'";
+                consulta += " WHERE P.nombre LIKE '%" + textoBusqueda + "%' OR P.docente LIKE '%" + textoBusqueda + "%' OR P.descripcion LIKE '%" + textoBusqueda + "%' OR C.nombre LIKE '%" + textoBusqueda + "%'";
             }
 //            System.out.println(consulta);
             ResultSet resultado = Conexion.getDatos(consulta);

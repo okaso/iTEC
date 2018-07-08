@@ -35,23 +35,27 @@ create  table carreras(
 );
 
 
-
+drop table asignaturas;
 create table asignaturas(
 	id int auto_increment,
     nombre varchar(20) not null,
-    descripcion varchar(150)not null,
+    descripcion text ,
     horasmes varchar(6)not null,	
     trimestre int not null,
     docente varchar(25),
-    carrera_fk int(15) not null,
+    carrera varchar(50) not null,
+    id_fk int ,
     primary key(id),
-    foreign key(carrera_fk) references carreras(id)
+    foreign key(id_fk) references carreras(id)
 );
+
 create table alumnos(
 	documento int (12)not null primary key,
     nombres varchar (20)not null,
     apellidos varchar(25) not null,
-    fnacimiento date,
-    carrera_fk int(11),
-    foreign key (carrera_fk) references carreras(id)
+    fnacimiento varchar(15)not null,
+    carrera varchar(50),
+    id_fk int ,
+    foreign key (id_fk) references carreras(id)
 );
+insert into alumnos(documento,nombres,apellidos,fnacimiento,carrera,id_fk)values (14176648,'pablo','segoivia vargas','28/08/1997','informatica',4);
